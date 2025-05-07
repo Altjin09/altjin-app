@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: altjin-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: altjin-app
+  template:
+    metadata:
+      labels:
+        app: altjin-app
+    spec:
+      containers:
+      - name: altjin-app
+        image: altjin09/altjin-app:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+
